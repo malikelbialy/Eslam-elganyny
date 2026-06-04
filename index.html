@@ -2,8 +2,8 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أكاديمية الجنايني - تعليم اللغة العربية</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>الأستاذ إسلام الجنايني | تعليم اللغة العربية</title>
     
     <!-- Firebase SDKs -->
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
@@ -12,384 +12,118 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Tajawal', 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        /* Landing Page */
-        .landing-page {
-            min-height: 100vh;
-            display: block;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #1E3A8A 0%, #764ba2 100%);
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .hero-logo {
-            width: 100px;
-            height: 100px;
-            background: rgba(255,255,255,0.15);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        .hero-logo i { font-size: 50px; color: #F59E0B; }
-        .hero h1 { font-size: 42px; margin-bottom: 15px; }
-        .hero p { font-size: 18px; opacity: 0.9; max-width: 700px; margin: 0 auto; }
-
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            margin-top: 50px;
-            flex-wrap: wrap;
-        }
-
-        .stat-number { font-size: 36px; font-weight: bold; color: #F59E0B; }
-        .stat-label { font-size: 14px; opacity: 0.85; }
-
-        .buttons-section {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin: 40px auto;
-            flex-wrap: wrap;
-            padding: 0 20px;
-        }
-
-        .main-btn {
-            padding: 15px 40px;
-            font-size: 18px;
-            font-weight: bold;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            font-family: inherit;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .btn-login { background: white; color: #1E3A8A; border: 2px solid #1E3A8A; }
-        .btn-login:hover { background: #1E3A8A; color: white; transform: translateY(-3px); }
-        .btn-courses { background: #F59E0B; color: white; }
-        .btn-courses:hover { background: #e68a00; transform: translateY(-3px); }
-
-        .container { max-width: 1200px; margin: 0 auto; padding: 50px 20px; }
-
-        .section-title {
-            text-align: center;
-            font-size: 32px;
-            color: #1E3A8A;
-            margin-bottom: 40px;
-        }
-        .section-title:after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background: #F59E0B;
-            margin: 15px auto 0;
-            border-radius: 5px;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
-        }
-
-        .feature-card {
-            background: white;
-            padding: 35px 25px;
-            border-radius: 20px;
-            text-align: center;
-            transition: all 0.3s;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-        .feature-card:hover { transform: translateY(-10px); }
-        .feature-card i { font-size: 50px; color: #F59E0B; margin-bottom: 20px; }
-        .feature-card h3 { color: #1E3A8A; margin-bottom: 15px; }
-        .feature-card p { color: #666; }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Cairo', sans-serif; background: #F9F7F3; color: #2C2A29; line-height: 1.5; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #E8E4DC; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb { background: #C7A252; border-radius: 10px; }
+        .landing-page { min-height: 100vh; display: block; }
+        .hero { background: linear-gradient(135deg, #1F2A3E 0%, #16212E 100%); color: #FDFBF7; padding: 70px 20px 80px; text-align: center; position: relative; }
+        .hero::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, #C7A252, #E4C07D, #C7A252); }
+        .hero-logo { width: 130px; height: 130px; background: rgba(255,255,240,0.05); border-radius: 50%; margin: 0 auto 25px; border: 2px solid rgba(199, 162, 82, 0.5); overflow: hidden; }
+        .hero-logo img { width: 100%; height: 100%; object-fit: cover; }
+        .hero h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 15px; }
+        .hero h1 span { color: #E4C07D; }
+        .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto; opacity: 0.9; }
+        .hero-stats { display: flex; justify-content: center; gap: 60px; margin-top: 55px; flex-wrap: wrap; }
+        .stat-item { background: rgba(255,255,245,0.05); padding: 12px 24px; border-radius: 60px; }
+        .stat-number { font-size: 2rem; font-weight: 800; color: #E4C07D; }
+        .buttons-section { display: flex; justify-content: center; gap: 30px; margin: 50px auto; flex-wrap: wrap; }
+        .main-btn { padding: 14px 38px; font-size: 1.1rem; font-weight: 600; border: none; border-radius: 50px; cursor: pointer; display: inline-flex; align-items: center; gap: 12px; transition: 0.25s; }
+        .btn-login { background: white; color: #1F2A3E; border: 1px solid #DDD5C8; }
+        .btn-login:hover { background: #F9F6EF; transform: translateY(-3px); border-color: #C7A252; }
+        .btn-courses { background: #C7A252; color: #1F2A3E; }
+        .btn-courses:hover { background: #B58D3E; transform: translateY(-3px); }
+        .container { max-width: 1280px; margin: 0 auto; padding: 60px 24px; }
+        .section-title { text-align: center; font-size: 2.2rem; font-weight: 700; color: #2C3A4B; margin-bottom: 50px; position: relative; }
+        .section-title:after { content: ''; display: block; width: 80px; height: 3px; background: #C7A252; margin: 18px auto 0; border-radius: 4px; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; margin-bottom: 70px; }
+        .feature-card { background: white; padding: 35px 22px; border-radius: 28px; text-align: center; transition: 0.3s; border: 1px solid #F0EBE2; }
+        .feature-card:hover { transform: translateY(-8px); border-color: #E4C07D; }
+        .feature-card i { font-size: 48px; color: #C7A252; margin-bottom: 22px; }
         .courses-section { display: none; }
         .courses-section.show { display: block; }
-
-        .courses-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .course-card {
-            background: white;
-            border-radius: 20px;
-            padding: 25px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-        .course-card:hover { transform: translateY(-8px); }
-        .course-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, #1E3A8A, #764ba2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 15px;
-        }
-        .course-icon i { font-size: 30px; color: white; }
-        .course-card h3 { color: #1E3A8A; margin-bottom: 10px; font-size: 18px; }
-        .course-card p { color: #666; font-size: 13px; margin-bottom: 15px; }
-        .course-badge { display: inline-block; background: #F59E0B; color: white; padding: 5px 15px; border-radius: 20px; font-size: 12px; }
-        .private-badge { background: #e74c3c; }
-
-        /* Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.7);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-        .modal-content {
-            background: white;
-            border-radius: 25px;
-            padding: 40px;
-            max-width: 450px;
-            width: 90%;
-            text-align: center;
-        }
-        .modal-input {
-            width: 100%;
-            padding: 15px;
-            border: 2px solid #e0e0e0;
-            border-radius: 12px;
-            font-size: 16px;
-            font-family: inherit;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        .modal-buttons { display: flex; gap: 15px; }
-        .btn-modal { flex: 1; padding: 12px; border: none; border-radius: 10px; font-size: 16px; font-weight: bold; cursor: pointer; }
-        .btn-primary { background: linear-gradient(135deg, #1E3A8A, #764ba2); color: white; }
-        .btn-secondary { background: #e0e0e0; color: #333; }
-
-        /* Platform Styles */
-        .platform-container { max-width: 1400px; margin: 0 auto; display: none; }
-        .login-container {
-            max-width: 400px;
-            margin: 100px auto;
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-        }
+        .courses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; }
+        .course-card { background: white; border-radius: 24px; padding: 28px 20px; text-align: center; cursor: pointer; transition: 0.3s; border: 1px solid #EDE8DF; }
+        .course-card:hover { transform: translateY(-6px); border-color: #C7A252; }
+        .course-icon { width: 75px; height: 75px; background: linear-gradient(135deg, #EADAAE, #C7A252); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
+        .course-icon i { font-size: 34px; color: #2C3A4B; }
+        .course-badge { background: #C7A25220; color: #8B6B32; padding: 6px 18px; border-radius: 40px; font-size: 0.75rem; font-weight: 600; }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(30,25,20,0.85); backdrop-filter: blur(4px); z-index: 1000; justify-content: center; align-items: center; }
+        .modal-content { background: #FFFDF9; border-radius: 40px; padding: 40px 32px; max-width: 460px; width: 90%; text-align: center; }
+        .modal-input { width: 100%; padding: 14px 18px; border: 1.5px solid #E2D9CF; border-radius: 60px; margin-bottom: 28px; text-align: center; }
+        .modal-buttons { display: flex; gap: 16px; }
+        .btn-modal { flex: 1; padding: 12px; border-radius: 60px; font-weight: 600; cursor: pointer; }
+        .btn-primary { background: #C7A252; color: #1F2A3E; }
+        .btn-secondary { background: #EFE9E0; }
+        .platform-container { max-width: 1400px; margin: 0 auto; display: none; padding: 30px 20px; }
+        .login-container { max-width: 460px; margin: 80px auto; background: white; border-radius: 36px; padding: 45px 35px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.2); }
         .logo { text-align: center; margin-bottom: 30px; }
-        .logo h1 { color: #1E3A8A; font-size: 28px; }
-        .logo p { color: #F59E0B; font-size: 14px; }
         .input-group { margin-bottom: 20px; }
-        .input-group label { display: block; margin-bottom: 8px; color: #333; font-weight: 500; }
-        .input-group input {
-            width: 100%;
-            padding: 12px 15px;
-            border: 2px solid #e0e0e0;
-            border-radius: 10px;
-            font-size: 16px;
-            font-family: inherit;
-        }
-        .btn-login-page {
-            width: 100%;
-            padding: 12px;
-            background: #1E3A8A;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        .btn-login-page:hover { background: #F59E0B; }
-        .error-msg { color: #e74c3c; text-align: center; margin-top: 15px; display: none; }
-        .back-home { text-align: center; margin-top: 20px; }
-        .back-home button { background: none; border: none; color: #1E3A8A; cursor: pointer; }
-
-        /* Dashboard */
+        .input-group label { display: block; margin-bottom: 8px; font-weight: 600; }
+        .input-group input { width: 100%; padding: 14px 18px; border: 1.5px solid #E2D9CF; border-radius: 60px; }
+        .btn-login-page { width: 100%; padding: 14px; background: #1F2A3E; color: white; border: none; border-radius: 60px; font-weight: 700; cursor: pointer; transition: 0.3s; }
+        .btn-login-page:hover { background: #C7A252; color: #1F2A3E; }
         .dashboard { display: none; }
-        .header {
-            background: white;
-            border-radius: 15px;
-            padding: 20px 30px;
-            margin-bottom: 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 25px;
-            margin-top: 20px;
-        }
-        .card {
-            background: white;
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s;
-        }
-        .card:hover { transform: translateY(-5px); }
-        .card h3 {
-            color: #1E3A8A;
-            margin-bottom: 15px;
-            border-right: 4px solid #F59E0B;
-            padding-right: 15px;
-        }
-        .lesson-item {
-            background: #f8f9fa;
-            padding: 15px;
-            margin-bottom: 10px;
-            border-radius: 10px;
-            border-right: 3px solid #F59E0B;
-        }
-        .rating-stars { color: #F59E0B; font-size: 24px; }
-        .warning {
-            background: #fff3cd;
-            border-right: 4px solid #ffc107;
-            padding: 15px;
-            border-radius: 8px;
-        }
-        .contact-info {
-            background: linear-gradient(135deg, #1E3A8A, #F59E0B);
-            color: white;
-            padding: 20px;
-            border-radius: 15px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
+        .header { background: white; border-radius: 24px; padding: 20px 30px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; border: 1px solid #EDE8DF; }
+        .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 25px; margin-top: 20px; }
+        .card { background: white; border-radius: 24px; padding: 25px; border: 1px solid #EFEBE4; margin-bottom: 20px; }
+        .card h3 { color: #2C3A4B; margin-bottom: 20px; border-right: 4px solid #C7A252; padding-right: 15px; }
+        .lesson-item { background: #FAF8F4; padding: 15px; border-radius: 20px; border-right: 3px solid #C7A252; margin-bottom: 12px; }
+        .rating-stars { color: #E4C07D; font-size: 24px; }
+        .warning { background: #FFF3E0; border-right: 4px solid #E4C07D; padding: 15px; border-radius: 20px; }
+        .contact-info { background: linear-gradient(95deg, #1F2A3E, #C7A252); color: white; padding: 20px; border-radius: 24px; margin-bottom: 25px; text-align: center; }
         .contact-info a { color: white; text-decoration: none; }
-        .tabs-container { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
-        .tab-btn {
-            background: #1E3A8A;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-        .tab-btn:hover { background: #F59E0B; }
-        .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; margin-bottom: 5px; color: #333; font-weight: 500; }
-        .form-group input, .form-group textarea, .form-group select {
-            width: 100%;
-            padding: 10px;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            font-family: inherit;
-        }
-
-        /* Footer */
-        .footer {
-            background: rgba(0,0,0,0.85);
-            color: white;
-            text-align: center;
-            padding: 25px;
-            margin-top: 60px;
-        }
-        .footer .developer i { color: #F59E0B; margin-left: 8px; }
-        .footer a { color: #F59E0B; text-decoration: none; }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 32px; }
-            .section-title { font-size: 26px; }
-            .buttons-section { flex-direction: column; align-items: center; }
-            .main-btn { width: 80%; justify-content: center; }
-            .cards-grid { grid-template-columns: 1fr; }
-            .header { flex-direction: column; gap: 15px; }
-        }
+        .tabs-container { display: flex; gap: 12px; margin-bottom: 25px; flex-wrap: wrap; }
+        .tab-btn { background: #EFEBE4; color: #2C3A4B; padding: 10px 24px; border: none; border-radius: 40px; cursor: pointer; font-weight: 600; }
+        .tab-btn:hover { background: #C7A252; color: white; }
+        .form-group { margin-bottom: 18px; }
+        .form-group label { display: block; margin-bottom: 6px; font-weight: 600; }
+        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 12px 15px; border: 1.5px solid #E2D9CF; border-radius: 20px; }
+        .footer { background: #1F2A3E; color: #DDD5C8; text-align: center; padding: 30px; margin-top: 60px; border-radius: 30px 30px 0 0; }
+        .footer a { color: #E4C07D; }
+        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .cards-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
-<!-- ==================== LANDING PAGE ==================== -->
+<!-- LANDING PAGE -->
 <div id="landingPage" class="landing-page">
     <div class="hero">
-        <div class="hero-logo"><i class="fas fa-chalkboard-user"></i></div>
-        <h1>📚 أكاديمية الجنايني</h1>
-        <p>تعليم اللغة العربية بإتقان - خبرة أكثر من 10 سنوات في تدريس المناهج العربية</p>
-        <div class="hero-stats">
-            <div class="stat-item"><div class="stat-number">10+</div><div class="stat-label">سنوات خبرة</div></div>
-            <div class="stat-item"><div class="stat-number">500+</div><div class="stat-label">طالب</div></div>
-            <div class="stat-item"><div class="stat-number">100%</div><div class="stat-label">رضا الطلاب</div></div>
-        </div>
+        <div class="hero-logo"><img src="https://i.ibb.co/HDN6pCBJ/image.jpg" alt="شعار الأستاذ إسلام الجنايني"></div>
+        <h1>📖 الأستاذ <span>إسلام الجنايني</span></h1>
+        <p>خبرة تمتد لأكثر من 10 سنوات في تعليم اللغة العربية - تأسيس ومراحل متقدمة بأسلوب متميز</p>
+        <div class="hero-stats"><div class="stat-item"><div class="stat-number">10+</div><div class="stat-label">سنوات خبرة</div></div><div class="stat-item"><div class="stat-number">500+</div><div class="stat-label">طالب</div></div><div class="stat-item"><div class="stat-number">100%</div><div class="stat-label">رضا الطلاب</div></div></div>
     </div>
-
     <div class="buttons-section">
-        <button class="main-btn btn-login" onclick="showPlatform()"><i class="fas fa-sign-in-alt"></i> 🔐 لدي حساب</button>
-        <button class="main-btn btn-courses" onclick="toggleCourses()"><i class="fas fa-book-open"></i> 📚 اختيار كورس</button>
+        <button class="main-btn btn-login" onclick="showPlatform()"><i class="fas fa-sign-in-alt"></i> دخول الطالب / ولي الأمر</button>
+        <button class="main-btn btn-courses" onclick="toggleCourses()"><i class="fas fa-book-open"></i> استكشف الكورسات</button>
     </div>
-
     <div class="container">
-        <h2 class="section-title">مميزات المنصة</h2>
+        <h2 class="section-title">لماذا الأستاذ إسلام الجنايني؟</h2>
         <div class="features-grid">
-            <div class="feature-card"><i class="fas fa-chalkboard"></i><h3>تدريس احترافي</h3><p>خبرة أكثر من 10 سنوات في تدريس اللغة العربية</p></div>
-            <div class="feature-card"><i class="fas fa-users"></i><h3>حصص تفاعلية</h3><p>حصص مباشرة أونلاين مع متابعة فردية</p></div>
-            <div class="feature-card"><i class="fas fa-file-alt"></i><h3>متابعة مستمرة</h3><p>تقييمات أسبوعية وتقارير أداء</p></div>
-            <div class="feature-card"><i class="fas fa-star"></i><h3>نظام تقييم متطور</h3><p>تقييم بنظام 5 نجوم مع ملاحظات</p></div>
+            <div class="feature-card"><i class="fas fa-chalkboard-user"></i><h3>تدريس احترافي</h3><p>خبرة طويلة في تأسيس الطلاب</p></div>
+            <div class="feature-card"><i class="fas fa-users"></i><h3>متابعة فردية</h3><p>اهتمام شخصي بكل طالب</p></div>
+            <div class="feature-card"><i class="fas fa-file-alt"></i><h3>تقارير دورية</h3><p>متابعة مستمرة للإنجاز</p></div>
+            <div class="feature-card"><i class="fas fa-star"></i><h3>نظام تقييم متطور</h3><p>تقييم بنظام 5 نجوم</p></div>
         </div>
-
         <div id="coursesSection" class="courses-section">
-            <h2 class="section-title">اختر الكورس المناسب لك</h2>
+            <h2 class="section-title">اختر مسارك التعليمي</h2>
             <div class="courses-grid" id="coursesGrid"></div>
         </div>
     </div>
-
-    <div class="footer">
-        <div class="developer"><i class="fas fa-code"></i> صنع بواسطة: <strong>مالك البيلي - Malek Elbialy</strong></div>
-        <div><i class="fas fa-phone"></i> رقم المبرمج: <a href="tel:+966547308744">+966 547 308 744</a></div>
-        <div style="margin-top: 10px; font-size: 12px;">© 2025 أكاديمية الجنايني - جميع الحقوق محفوظة</div>
-    </div>
+    <div class="footer"><div class="developer"><i class="fas fa-code"></i> صنع بواسطة: <strong>مالك البيلي - Malek Elbialy</strong></div><div><i class="fas fa-phone"></i> <a href="tel:+966547308744">+966 547 308 744</a></div><div>© 2025 الأستاذ إسلام الجنايني</div></div>
 </div>
 
-<!-- ==================== PLATFORM ==================== -->
+<!-- PLATFORM CONTAINER -->
 <div id="platformContainer" class="platform-container">
     <!-- Login Section -->
     <div id="loginSection" class="login-container">
-        <div class="logo"><h1>📚 أكاديمية الجنايني</h1><p>تعليم اللغة العربية بإتقان</p></div>
+        <div class="logo"><h1>📚 الأستاذ إسلام الجنايني</h1><p>تعليم اللغة العربية بإتقان</p></div>
         <div class="input-group"><label>👤 اسم المستخدم</label><input type="text" id="loginUsername" placeholder="أدخل اسم المستخدم"></div>
         <div class="input-group"><label>🔒 كلمة المرور</label><input type="password" id="loginPassword" placeholder="أدخل كلمة المرور"></div>
         <button class="btn-login-page" onclick="doLogin()">دخول</button>
@@ -399,10 +133,7 @@
 
     <!-- Teacher Dashboard -->
     <div id="teacherDashboard" class="dashboard">
-        <div class="header">
-            <h2>👨‍🏫 لوحة تحكم الأستاذ إسلام الجنايني</h2>
-            <button class="btn-login-page" onclick="logout()" style="width: auto; background:#e74c3c;">تسجيل خروج</button>
-        </div>
+        <div class="header"><h2>👨‍🏫 لوحة تحكم الأستاذ إسلام الجنايني</h2><button class="btn-login-page" onclick="logout()" style="width:auto; background:#9e2d2d;">تسجيل خروج</button></div>
         <div class="tabs-container">
             <button class="tab-btn" onclick="showTeacherTab('students')">📋 الطلاب</button>
             <button class="tab-btn" onclick="showTeacherTab('parents')">👨‍👦 أولياء الأمور</button>
@@ -410,72 +141,18 @@
             <button class="tab-btn" onclick="showTeacherTab('ratings')">⭐ التقييمات</button>
             <button class="tab-btn" onclick="showTeacherTab('session')">🎥 رابط الحصة</button>
         </div>
-        <div id="teacherStudentsTab">
-            <div class="card"><h3>➕ إضافة طالب جديد</h3>
-                <div class="form-group"><label>اسم الطالب</label><input type="text" id="studentName"></div>
-                <div class="form-group"><label>اسم المستخدم</label><input type="text" id="studentUsername"></div>
-                <div class="form-group"><label>كلمة المرور</label><input type="text" id="studentPassword"></div>
-                <div class="form-group"><label>الصف</label><select id="studentGrade"><option>الصف الأول الإعدادي</option><option>الصف الثاني الإعدادي</option><option>الصف الثالث الإعدادي</option><option>الصف الأول الثانوي</option><option>الصف الثاني الثانوي</option><option>الصف الثالث الثانوي</option></select></div>
-                <div class="form-group"><label>تاريخ الاستحقاق</label><input type="date" id="subscriptionDueDate"></div>
-                <div class="form-group"><label>قيمة الاشتراك</label><input type="number" id="subscriptionAmount" placeholder="200"></div>
-                <button class="btn-login-page" onclick="addStudent()" style="width:auto;padding:10px 20px;">إضافة</button>
-            </div>
-            <div class="cards-grid" id="studentsList"></div>
-        </div>
-        <div id="teacherParentsTab" style="display:none">
-            <div class="card"><h3>➕ إضافة ولي أمر</h3>
-                <div class="form-group"><label>الاسم</label><input type="text" id="parentName"></div>
-                <div class="form-group"><label>اسم المستخدم</label><input type="text" id="parentUsername"></div>
-                <div class="form-group"><label>كلمة المرور</label><input type="text" id="parentPassword"></div>
-                <div class="form-group"><label>ربط الطلاب</label><select id="parentLinkedStudents" multiple style="height:100px"></select></div>
-                <button class="btn-login-page" onclick="addParent()" style="width:auto">إضافة</button>
-            </div>
-            <div class="cards-grid" id="parentsList"></div>
-        </div>
-        <div id="teacherLessonsTab" style="display:none">
-            <div class="card"><h3>📝 تحديث الدروس</h3>
-                <div class="form-group"><label>الطالب</label><select id="lessonStudentSelect"></select></div>
-                <div class="form-group"><label>الدرس الجديد</label><textarea id="newLesson" rows="3"></textarea></div>
-                <div class="form-group"><label>واجب الحصة</label><textarea id="homeworkLesson" rows="3"></textarea></div>
-                <div class="form-group"><label>المراجعة</label><textarea id="reviewLesson" rows="3"></textarea></div>
-                <button class="btn-login-page" onclick="updateStudentLessons()" style="width:auto">تحديث</button>
-            </div>
-        </div>
-        <div id="teacherRatingsTab" style="display:none">
-            <div class="card"><h3>⭐ تقييم الطلاب</h3>
-                <div class="form-group"><label>الطالب</label><select id="ratingStudentSelect"></select></div>
-                <div class="form-group"><label>التقييم</label><select id="starsRating"><option value="5">★★★★★</option><option value="4">★★★★☆</option><option value="3">★★★☆☆</option><option value="2">★★☆☆☆</option><option value="1">★☆☆☆☆</option></select></div>
-                <div class="form-group"><label>ملاحظة</label><textarea id="ratingComment" rows="3"></textarea></div>
-                <button class="btn-login-page" onclick="submitRating()" style="width:auto">إرسال</button>
-            </div>
-        </div>
-        <div id="teacherSessionTab" style="display:none">
-            <div class="card"><h3>🎥 رابط الحصة</h3>
-                <div class="form-group"><label>الرابط</label><input type="url" id="sessionLink"></div>
-                <div class="form-group"><label>المستلمين</label><select id="sessionTargetType" onchange="toggleSessionTargets()"><option value="all">جميع الطلاب</option><option value="group">حسب الصف</option><option value="student">طالب محدد</option></select></div>
-                <div id="groupSelectDiv" style="display:none"><label>الصف</label><select id="sessionGroupSelect"><option>الصف الأول الإعدادي</option><option>الصف الثاني الإعدادي</option><option>الصف الثالث الإعدادي</option><option>الصف الأول الثانوي</option><option>الصف الثاني الثانوي</option><option>الصف الثالث الثانوي</option></select></div>
-                <div id="studentSelectDiv" style="display:none"><label>الطالب</label><select id="sessionStudentSelect"></select></div>
-                <button class="btn-login-page" onclick="setSessionLink()" style="width:auto">حفظ</button>
-            </div>
-            <div class="card" id="currentSessionDisplay"></div>
-        </div>
-        <!-- Footer in Teacher Dashboard -->
-        <div class="footer" style="margin-top: 40px;">
-            <div class="developer"><i class="fas fa-code"></i> صنع بواسطة: <strong>مالك البيلي - Malek Elbialy</strong></div>
-            <div><i class="fas fa-phone"></i> رقم المبرمج: <a href="tel:+966547308744">+966 547 308 744</a></div>
-        </div>
+        <div id="teacherStudentsTab"><div class="card"><h3>➕ إضافة طالب جديد</h3><div class="form-group"><label>اسم الطالب</label><input type="text" id="studentName"></div><div class="form-group"><label>اسم المستخدم</label><input type="text" id="studentUsername"></div><div class="form-group"><label>كلمة المرور</label><input type="text" id="studentPassword"></div><div class="form-group"><label>الصف</label><select id="studentGrade"><option>الصف الأول الإعدادي</option><option>الصف الثاني الإعدادي</option><option>الصف الثالث الإعدادي</option><option>الصف الأول الثانوي</option><option>الصف الثاني الثانوي</option><option>الصف الثالث الثانوي</option></select></div><div class="form-group"><label>نوع الكورس</label><select id="studentCourseType"><option value="public">عام</option><option value="private">خاص (برايفت/تأسيس)</option></select></div><div class="form-group"><label>تاريخ الاستحقاق</label><input type="date" id="subscriptionDueDate"></div><div class="form-group"><label>قيمة الاشتراك</label><input type="number" id="subscriptionAmount" placeholder="200"></div><button class="btn-login-page" onclick="addStudent()" style="width:auto;padding:10px 20px;">إضافة طالب</button></div><div class="cards-grid" id="studentsList"></div></div>
+        <div id="teacherParentsTab" style="display:none"><div class="card"><h3>➕ إضافة ولي أمر</h3><div class="form-group"><label>الاسم</label><input type="text" id="parentName"></div><div class="form-group"><label>اسم المستخدم</label><input type="text" id="parentUsername"></div><div class="form-group"><label>كلمة المرور</label><input type="text" id="parentPassword"></div><div class="form-group"><label>ربط الطلاب</label><select id="parentLinkedStudents" multiple style="height:100px"></select></div><button class="btn-login-page" onclick="addParent()" style="width:auto">إضافة ولي أمر</button></div><div class="cards-grid" id="parentsList"></div></div>
+        <div id="teacherLessonsTab" style="display:none"><div class="card"><h3>📝 تحديث الدروس والواجبات</h3><div class="form-group"><label>الطالب</label><select id="lessonStudentSelect"></select></div><div class="form-group"><label>الدرس الجديد</label><textarea id="newLesson" rows="3"></textarea></div><div class="form-group"><label>واجب الحصة</label><textarea id="homeworkLesson" rows="3"></textarea></div><div class="form-group"><label>المراجعة</label><textarea id="reviewLesson" rows="3"></textarea></div><button class="btn-login-page" onclick="updateStudentLessons()" style="width:auto">تحديث</button></div></div>
+        <div id="teacherRatingsTab" style="display:none"><div class="card"><h3>⭐ تقييم الطلاب</h3><div class="form-group"><label>الطالب</label><select id="ratingStudentSelect"></select></div><div class="form-group"><label>التقييم</label><select id="starsRating"><option value="5">★★★★★</option><option value="4">★★★★☆</option><option value="3">★★★☆☆</option><option value="2">★★☆☆☆</option><option value="1">★☆☆☆☆</option></select></div><div class="form-group"><label>ملاحظة الأستاذ</label><textarea id="ratingComment" rows="3"></textarea></div><button class="btn-login-page" onclick="submitRating()" style="width:auto">إرسال التقييم</button></div></div>
+        <div id="teacherSessionTab" style="display:none"><div class="card"><h3>🎥 رابط الحصة المباشرة</h3><div class="form-group"><label>الرابط</label><input type="url" id="sessionLink" placeholder="https://meet.google.com/..."></div><div class="form-group"><label>المستلمين</label><select id="sessionTargetType" onchange="toggleSessionTargets()"><option value="all">جميع الطلاب</option><option value="group">حسب الصف</option><option value="student">طالب محدد</option></select></div><div id="groupSelectDiv" style="display:none"><label>الصف</label><select id="sessionGroupSelect"><option>الصف الأول الإعدادي</option><option>الصف الثاني الإعدادي</option><option>الصف الثالث الإعدادي</option><option>الصف الأول الثانوي</option><option>الصف الثاني الثانوي</option><option>الصف الثالث الثانوي</option></select></div><div id="studentSelectDiv" style="display:none"><label>الطالب</label><select id="sessionStudentSelect"></select></div><button class="btn-login-page" onclick="setSessionLink()" style="width:auto">حفظ الرابط</button></div><div class="card" id="currentSessionDisplay"></div></div>
+        <div class="footer" style="margin-top:40px;"><div class="developer">مالك البيلي</div><div><i class="fas fa-phone"></i> <a href="tel:+966547308744">+966547308744</a></div></div>
     </div>
 
     <!-- Student Dashboard -->
     <div id="studentDashboard" class="dashboard">
-        <div class="header">
-            <h2>👨‍🎓 <span id="studentNameDisplay"></span> - منصة التعلم</h2>
-            <button class="btn-login-page" onclick="logout()" style="width:auto;background:#e74c3c;">تسجيل خروج</button>
-        </div>
-        <div class="contact-info">
-            <p>📞 للتواصل: <a href="tel:+201091307627">+20 10 91307627</a></p>
-            <p>▶️ <a href="https://youtube.com/@islam_elganainy" target="_blank">قناة اليوتيوب</a></p>
-        </div>
+        <div class="header"><h2>👨‍🎓 <span id="studentNameDisplay"></span> - منصة التعلم</h2><button class="btn-login-page" onclick="logout()" style="width:auto;background:#9e2d2d;">تسجيل خروج</button></div>
+        <div class="contact-info"><p>📞 للتواصل: <a href="tel:+201091307627">+20 10 91307627</a></p><p>▶️ <a href="https://youtube.com/@islam_elganainy" target="_blank">قناة اليوتيوب</a></p></div>
         <div class="cards-grid">
             <div class="card"><h3>📘 الدرس الجديد</h3><div id="studentNewLesson" class="lesson-item">جاري التحميل...</div></div>
             <div class="card"><h3>📌 واجب الحصة</h3><div id="studentHomework" class="lesson-item">جاري التحميل...</div></div>
@@ -484,44 +161,23 @@
             <div class="card"><h3>🎥 رابط الحصة</h3><div id="studentSessionLink" class="lesson-item">جاري التحميل...</div></div>
             <div class="card"><h3>💰 الاشتراك</h3><div id="studentSubscription" class="lesson-item">جاري التحميل...</div></div>
         </div>
-        <div class="footer" style="margin-top: 40px;">
-            <div class="developer"><i class="fas fa-code"></i> صنع بواسطة: <strong>مالك البيلي - Malek Elbialy</strong></div>
-            <div><i class="fas fa-phone"></i> رقم المبرمج: <a href="tel:+966547308744">+966 547 308 744</a></div>
-        </div>
+        <div class="footer"><div class="developer">مالك البيلي</div><div><i class="fas fa-phone"></i> <a href="tel:+966547308744">+966547308744</a></div></div>
     </div>
 
     <!-- Parent Dashboard -->
     <div id="parentDashboard" class="dashboard">
-        <div class="header">
-            <h2>👨‍👦 لوحة ولي الأمر</h2>
-            <button class="btn-login-page" onclick="logout()" style="width:auto;background:#e74c3c;">تسجيل خروج</button>
-        </div>
-        <div class="contact-info">
-            <p>📞 للتواصل: <a href="tel:+201091307627">+20 10 91307627</a></p>
-        </div>
+        <div class="header"><h2>👨‍👦 لوحة ولي الأمر</h2><button class="btn-login-page" onclick="logout()" style="width:auto;background:#9e2d2d;">تسجيل خروج</button></div>
+        <div class="contact-info"><p>📞 للتواصل: <a href="tel:+201091307627">+20 10 91307627</a></p></div>
         <div class="cards-grid" id="parentStudentsData"></div>
-        <div class="footer" style="margin-top: 40px;">
-            <div class="developer"><i class="fas fa-code"></i> صنع بواسطة: <strong>مالك البيلي - Malek Elbialy</strong></div>
-            <div><i class="fas fa-phone"></i> رقم المبرمج: <a href="tel:+966547308744">+966 547 308 744</a></div>
-        </div>
+        <div class="footer">جميع الحقوق محفوظة © الأستاذ إسلام الجنايني</div>
     </div>
 </div>
 
-<!-- Modal -->
-<div id="registrationModal" class="modal">
-    <div class="modal-content">
-        <i class="fas fa-graduation-cap" style="font-size:50px;color:#F59E0B;"></i>
-        <h3>تسجيل جديد</h3>
-        <p class="selected-course" id="selectedCourseName"></p>
-        <input type="text" id="studentNameModal" class="modal-input" placeholder="اكتب اسمك كاملاً">
-        <div class="modal-buttons">
-            <button class="btn-modal btn-secondary" onclick="closeModal()">إلغاء</button>
-            <button class="btn-modal btn-primary" onclick="sendToWhatsApp()">تسجيل وإرسال</button>
-        </div>
-    </div>
-</div>
+<!-- Modal للتسجيل -->
+<div id="registrationModal" class="modal"><div class="modal-content"><i class="fas fa-graduation-cap" style="font-size:50px;color:#C7A252;"></i><h3>تسجيل جديد</h3><p class="selected-course" id="selectedCourseName"></p><input type="text" id="studentNameModal" class="modal-input" placeholder="اكتب اسمك كاملاً"><div class="modal-buttons"><button class="btn-modal btn-secondary" onclick="closeModal()">إلغاء</button><button class="btn-modal btn-primary" onclick="sendToWhatsApp()">تسجيل وإرسال</button></div></div></div>
 
 <script>
+    // Firebase Config (المشروع الأول)
     const firebaseConfig = {
         apiKey: "AIzaSyDP_LMPiFA5r9tDHayT3b2ZOyb7YntJRtI",
         authDomain: "elganyny-95e78.firebaseapp.com",
@@ -532,168 +188,245 @@
     };
     firebase.initializeApp(firebaseConfig);
     const db = firebase.firestore();
-
     const TEACHER_PHONE = "201091307627";
     let selectedCourse = null;
     let currentUser = null;
     let currentUserType = null;
 
-    // ========== LOCAL STORAGE FUNCTIONS (تذكرني) ==========
-    function saveUserToLocalStorage(user, userType) {
-        localStorage.setItem('currentUser', JSON.stringify(user));
-        localStorage.setItem('currentUserType', userType);
-        localStorage.setItem('isLoggedIn', 'true');
-    }
+    // Local Storage
+    function saveUserToLocalStorage(user, userType) { localStorage.setItem('currentUser', JSON.stringify(user)); localStorage.setItem('currentUserType', userType); localStorage.setItem('isLoggedIn', 'true'); }
+    function loadUserFromLocalStorage() { if(localStorage.getItem('isLoggedIn')==='true'){ const u = JSON.parse(localStorage.getItem('currentUser')); const t = localStorage.getItem('currentUserType'); if(u && t){ currentUser=u; currentUserType=t; return true; } } return false; }
+    function clearUserFromLocalStorage() { localStorage.removeItem('currentUser'); localStorage.removeItem('currentUserType'); localStorage.removeItem('isLoggedIn'); }
 
-    function loadUserFromLocalStorage() {
-        const isLoggedIn = localStorage.getItem('isLoggedIn');
-        if (isLoggedIn === 'true') {
-            const user = JSON.parse(localStorage.getItem('currentUser'));
-            const userType = localStorage.getItem('currentUserType');
-            if (user && userType) {
-                currentUser = user;
-                currentUserType = userType;
-                return true;
-            }
-        }
-        return false;
-    }
-
-    function clearUserFromLocalStorage() {
-        localStorage.removeItem('currentUser');
-        localStorage.removeItem('currentUserType');
-        localStorage.removeItem('isLoggedIn');
-    }
-
-    // ========== COURSES ==========
+    // Courses
     const courses = [
-        { id: 1, name: "المرحلة الأولى - الصف الأول الإعدادي", icon: "fa-book", desc: "منهج كامل + متابعة", type: "public" },
-        { id: 2, name: "المرحلة الثانية - الصف الثاني الإعدادي", icon: "fa-book-open", desc: "منهج كامل + متابعة", type: "public" },
-        { id: 3, name: "المرحلة الثالثة - الصف الثالث الإعدادي", icon: "fa-graduation-cap", desc: "منهج كامل + متابعة", type: "public" },
-        { id: 4, name: "المرحلة الرابعة - الصف الأول الثانوي", icon: "fa-chalkboard", desc: "منهج كامل + متابعة", type: "public" },
-        { id: 5, name: "المرحلة الخامسة - الصف الثاني الثانوي", icon: "fa-school", desc: "منهج كامل + متابعة", type: "public" },
-        { id: 6, name: "المرحلة السادسة - الصف الثالث الثانوي", icon: "fa-university", desc: "منهج كامل + متابعة", type: "public" },
-        { id: 7, name: "حصص خاصة (برايفت) - 1-on-1", icon: "fa-user-graduate", desc: "جلسة خاصة فردية", type: "private" },
-        { id: 8, name: "كورس تأسيس (برايفت) - Foundation", icon: "fa-building", desc: "تأسيس قوي في اللغة العربية", type: "private" }
+        { id:1, name:"المرحلة الأولى - الصف الأول الإعدادي", icon:"fa-book", desc:"منهج كامل + متابعة", type:"public" },
+        { id:2, name:"المرحلة الثانية - الصف الثاني الإعدادي", icon:"fa-book-open", desc:"منهج كامل + متابعة", type:"public" },
+        { id:3, name:"المرحلة الثالثة - الصف الثالث الإعدادي", icon:"fa-graduation-cap", desc:"منهج كامل + متابعة", type:"public" },
+        { id:4, name:"المرحلة الرابعة - الصف الأول الثانوي", icon:"fa-chalkboard", desc:"منهج كامل + متابعة", type:"public" },
+        { id:5, name:"المرحلة الخامسة - الصف الثاني الثانوي", icon:"fa-school", desc:"منهج كامل + متابعة", type:"public" },
+        { id:6, name:"المرحلة السادسة - الصف الثالث الثانوي", icon:"fa-university", desc:"منهج كامل + متابعة", type:"public" },
+        { id:7, name:"حصص خاصة (برايفت) - 1-on-1", icon:"fa-user-graduate", desc:"جلسة خاصة فردية", type:"private" },
+        { id:8, name:"كورس تأسيس (برايفت)", icon:"fa-building", desc:"تأسيس قوي في اللغة", type:"private" }
     ];
+    function loadCourses(){ const grid=document.getElementById('coursesGrid'); grid.innerHTML=''; courses.forEach(c=>{ const card=document.createElement('div'); card.className='course-card'; card.onclick=()=>selectCourse(c); card.innerHTML=`<div class="course-icon"><i class="fas ${c.icon}"></i></div><h3>${c.name}</h3><p>${c.desc}</p><span class="course-badge">اتصل بنا</span>`; grid.appendChild(card); }); }
+    function toggleCourses(){ document.getElementById('coursesSection').classList.toggle('show'); if(document.getElementById('coursesSection').classList.contains('show')) document.getElementById('coursesSection').scrollIntoView({behavior:'smooth'}); }
+    function selectCourse(course){ selectedCourse=course; document.getElementById('selectedCourseName').innerHTML=`📚 ${course.name}`; document.getElementById('registrationModal').style.display='flex'; }
+    function closeModal(){ document.getElementById('registrationModal').style.display='none'; document.getElementById('studentNameModal').value=''; }
+    function sendToWhatsApp(){ const name=document.getElementById('studentNameModal').value.trim(); if(!name){ alert('الرجاء إدخال الاسم'); return; } const msg=`مرحباً أستاذ إسلام الجنايني 👨‍🏫\nأنا الطالب/ة: ${name}\nأرغب في الاشتراك في الكورس التالي:\n📚 ${selectedCourse.name}\nأرجو التواصل معي لتأكيد التسجيل.`; window.open(`https://wa.me/${TEACHER_PHONE}?text=${encodeURIComponent(msg)}`,'_blank'); closeModal(); alert('تم إرسال طلب التسجيل بنجاح!'); }
 
-    function loadCourses() {
-        const grid = document.getElementById('coursesGrid');
-        grid.innerHTML = '';
-        courses.forEach(course => {
-            const card = document.createElement('div');
-            card.className = 'course-card';
-            card.onclick = () => selectCourse(course);
-            card.innerHTML = `<div class="course-icon"><i class="fas ${course.icon}"></i></div><h3>${course.name}</h3><p>${course.desc}</p><span class="course-badge ${course.type === 'private' ? 'private-badge' : ''}">اتصل بنا</span>`;
-            grid.appendChild(card);
-        });
-    }
-
-    function toggleCourses() {
-        const section = document.getElementById('coursesSection');
-        section.classList.toggle('show');
-        if (section.classList.contains('show')) section.scrollIntoView({ behavior: 'smooth' });
-    }
-
-    function selectCourse(course) {
-        selectedCourse = course;
-        document.getElementById('selectedCourseName').innerHTML = `📚 ${course.name}`;
-        document.getElementById('registrationModal').style.display = 'flex';
-    }
-
-    function closeModal() {
-        document.getElementById('registrationModal').style.display = 'none';
-        document.getElementById('studentNameModal').value = '';
-    }
-
-    function sendToWhatsApp() {
-        const studentName = document.getElementById('studentNameModal').value.trim();
-        if (!studentName) { alert('الرجاء إدخال اسمك الكريم'); return; }
-        const msg = `مرحباً أستاذ إسلام الجنايني 👨‍🏫\n\nأنا الطالب/ة: ${studentName}\nأرغب في الاشتراك في الكورس التالي:\n📚 ${selectedCourse.name}\n\nأرجو التواصل معي لتأكيد التسجيل.\nشكراً 🙏`;
-        window.open(`https://wa.me/${TEACHER_PHONE}?text=${encodeURIComponent(msg)}`, '_blank');
-        closeModal();
-        alert('تم إرسال طلب التسجيل بنجاح! سيتم التواصل معك قريباً.');
-    }
-
-    // ========== UI FUNCTIONS ==========
-    function showLandingPage() {
-        document.getElementById('landingPage').style.display = 'block';
-        document.getElementById('platformContainer').style.display = 'none';
-    }
-
-    function showPlatform() {
-        document.getElementById('landingPage').style.display = 'none';
-        document.getElementById('platformContainer').style.display = 'block';
-    }
-
-    // ========== FIREBASE FUNCTIONS ==========
+    // Initialize default data
     async function initDefaultData() {
-        // فقط إنشاء حساب المدرس إذا لم يكن موجوداً
         const teacherRef = await db.collection('teachers').doc('islam_elgenainy').get();
         if (!teacherRef.exists) {
             await db.collection('teachers').doc('islam_elgenainy').set({
-                name: 'إسلام الجنايني',
-                username: 'islam',
-                password: '123456',
-                type: 'teacher'
+                name: 'إسلام الجنايني', username: 'islam', password: '123456', type: 'teacher'
             });
         }
-        // لا يتم إنشاء أي طالب أو ولي أمر تجريبي
     }
 
+    // Student Management
+    async function addStudent() {
+        const name = document.getElementById('studentName').value;
+        const user = document.getElementById('studentUsername').value;
+        const pass = document.getElementById('studentPassword').value;
+        const grade = document.getElementById('studentGrade').value;
+        const courseType = document.getElementById('studentCourseType').value;
+        const due = document.getElementById('subscriptionDueDate').value;
+        const amt = document.getElementById('subscriptionAmount').value;
+        if (!name || !user || !pass) { alert('املأ الحقول'); return; }
+        await db.collection('students').add({
+            name, username: user, password: pass, type: 'student', grade,
+            courseType: courseType,
+            subscription: { dueDate: due || null, amount: amt || 200 },
+            lessons: { jadeed: '', qareeb: '', baeed: '' },
+            rating: { stars: 0, comment: '' }
+        });
+        alert('تمت الإضافة');
+        loadStudentsList(); loadStudentSelectors(); loadParentsList();
+    }
+
+    async function loadStudentsList() {
+        const snap = await db.collection('students').get();
+        const list = document.getElementById('studentsList');
+        list.innerHTML = '';
+        snap.forEach(d => {
+            const s = d.data();
+            list.innerHTML += `<div class="card"><h3>👨‍🎓 ${s.name}</h3><p><strong>اسم المستخدم:</strong> ${s.username}</p><p><strong>📚 الصف:</strong> ${s.grade}</p><p><strong>نوع الكورس:</strong> ${s.courseType === 'public' ? 'عام' : 'خاص'}</p><p><strong>💰 الاشتراك:</strong> ${s.subscription?.amount || 200} جنيه</p><button class="btn-login-page" onclick="deleteStudent('${d.id}')" style="background:#9e2d2d;width:auto;margin-top:10px;">حذف</button></div>`;
+        });
+    }
+
+    async function deleteStudent(id) {
+        if (confirm('تأكيد الحذف؟')) {
+            await db.collection('students').doc(id).delete();
+            loadStudentsList(); loadStudentSelectors(); loadParentsList();
+        }
+    }
+
+    async function loadParentsList() {
+        const snap = await db.collection('parents').get();
+        const list = document.getElementById('parentsList');
+        list.innerHTML = '';
+        for (const doc of snap.docs) {
+            const p = doc.data();
+            let names = [];
+            for (let sid of (p.linkedStudents || [])) {
+                const s = await db.collection('students').doc(sid).get();
+                if (s.exists) names.push(s.data().name);
+            }
+            list.innerHTML += `<div class="card"><h3>👨‍👦 ${p.name}</h3><p>اسم المستخدم: ${p.username}</p><p>الطلاب: ${names.join(', ')}</p><button onclick="deleteParent('${doc.id}')" style="background:#9e2d2d;padding:8px 15px;border:none;border-radius:20px;color:white;">حذف</button></div>`;
+        }
+    }
+
+    async function addParent() {
+        const name = document.getElementById('parentName').value;
+        const user = document.getElementById('parentUsername').value;
+        const pass = document.getElementById('parentPassword').value;
+        const selected = Array.from(document.getElementById('parentLinkedStudents').selectedOptions).map(o => o.value);
+        if (!name || !user || !pass) { alert('املأ الحقول'); return; }
+        await db.collection('parents').add({ name, username: user, password: pass, type: 'parent', linkedStudents: selected, phone: '' });
+        alert('تمت الإضافة');
+        loadParentsList();
+    }
+
+    async function deleteParent(id) {
+        if (confirm('تأكيد الحذف؟')) {
+            await db.collection('parents').doc(id).delete();
+            loadParentsList();
+        }
+    }
+
+    async function loadStudentSelectors() {
+        const snap = await db.collection('students').get();
+        const ls = document.getElementById('lessonStudentSelect');
+        const rs = document.getElementById('ratingStudentSelect');
+        const ss = document.getElementById('sessionStudentSelect');
+        const ps = document.getElementById('parentLinkedStudents');
+        [ls, rs, ss, ps].forEach(s => s.innerHTML = '');
+        snap.forEach(d => {
+            const s = d.data();
+            const opt = `<option value="${d.id}">${s.name} - ${s.grade}</option>`;
+            ls.innerHTML += opt;
+            rs.innerHTML += opt;
+            ss.innerHTML += opt;
+            ps.innerHTML += `<option value="${d.id}">${s.name}</option>`;
+        });
+    }
+
+    async function updateStudentLessons() {
+        const id = document.getElementById('lessonStudentSelect').value;
+        if (!id) return alert('اختر طالب');
+        await db.collection('students').doc(id).update({
+            'lessons.jadeed': document.getElementById('newLesson').value,
+            'lessons.qareeb': document.getElementById('homeworkLesson').value,
+            'lessons.baeed': document.getElementById('reviewLesson').value
+        });
+        alert('تم تحديث الدروس');
+    }
+
+    async function submitRating() {
+        const id = document.getElementById('ratingStudentSelect').value;
+        if (!id) return alert('اختر طالب');
+        await db.collection('students').doc(id).update({
+            'rating.stars': parseInt(document.getElementById('starsRating').value),
+            'rating.comment': document.getElementById('ratingComment').value
+        });
+        alert('تم إرسال التقييم');
+    }
+
+    // Session link functions
+    function toggleSessionTargets() {
+        const t = document.getElementById('sessionTargetType').value;
+        document.getElementById('groupSelectDiv').style.display = t === 'group' ? 'block' : 'none';
+        document.getElementById('studentSelectDiv').style.display = t === 'student' ? 'block' : 'none';
+    }
+    async function setSessionLink() {
+        const link = document.getElementById('sessionLink').value;
+        const type = document.getElementById('sessionTargetType').value;
+        let targets = []; let group = null;
+        if (type === 'all') targets = ['all'];
+        else if (type === 'group') { group = document.getElementById('sessionGroupSelect').value; targets = ['group:'+group]; }
+        else { const sid = document.getElementById('sessionStudentSelect').value; targets = [sid]; }
+        if (!link) { alert('أدخل الرابط'); return; }
+        await db.collection('sessions').doc('current').set({ link, targets, targetType: type, group, date: new Date().toISOString() });
+        alert('تم حفظ رابط الحصة');
+        loadCurrentSession();
+    }
+    async function loadCurrentSession() {
+        const doc = await db.collection('sessions').doc('current').get();
+        const div = document.getElementById('currentSessionDisplay');
+        if (doc.exists) {
+            const s = doc.data();
+            div.innerHTML = `<h3>🔗 الرابط الحالي</h3><p><a href="${s.link}" target="_blank">${s.link}</a></p><p>🎯 ${s.targetType === 'all' ? 'جميع الطلاب' : s.targetType === 'group' ? `الصف: ${s.group}` : 'طالب محدد'}</p>`;
+        } else div.innerHTML = '<h3>لا يوجد رابط حصة</h3>';
+    }
+    async function loadStudentSession() {
+        const doc = await db.collection('sessions').doc('current').get();
+        const div = document.getElementById('studentSessionLink');
+        if (doc.exists) {
+            const s = doc.data();
+            let show = false;
+            if (s.targets.includes('all')) show = true;
+            else if (s.targetType === 'group' && s.group === currentUser.grade) show = true;
+            else if (s.targets.includes(currentUser.id)) show = true;
+            if (show) div.innerHTML = `<a href="${s.link}" target="_blank">اضغط للدخول إلى الحصة</a>`;
+            else div.innerHTML = 'لا توجد حصة مخصصة لك حالياً';
+        } else div.innerHTML = 'لم يتم تحديد رابط للحصة بعد';
+    }
+
+    async function checkSubscriptionWarning() {
+        const due = currentUser.subscription?.dueDate;
+        const amount = currentUser.subscription?.amount;
+        const div = document.getElementById('studentSubscription');
+        if (due) {
+            const diff = Math.ceil((new Date(due) - new Date()) / (1000 * 60 * 60 * 24));
+            if (diff <= 0) div.innerHTML = `<div class="warning"><div>⚠️ الاشتراك منتهي!</div><div>تاريخ الاستحقاق: ${due}</div><div>تواصل مع الأستاذ: +20 10 91307627</div></div>`;
+            else if (diff <= 3) div.innerHTML = `<div class="warning"><div>⚠️ متبقي ${diff} أيام</div><div>تاريخ الاستحقاق: ${due}</div></div>`;
+            else div.innerHTML = `<div>تاريخ الاستحقاق: ${due}</div><div>القيمة: ${amount} جنيه</div>`;
+        } else div.innerHTML = '<div>لم يحدد موعد</div>';
+    }
+
+    // Dashboard switching
+    function showTeacherTab(tab) {
+        const tabs = ['students', 'parents', 'lessons', 'ratings', 'session'];
+        tabs.forEach(t => document.getElementById(`teacher${t.charAt(0).toUpperCase()+t.slice(1)}Tab`).style.display = 'none');
+        document.getElementById(`teacher${tab.charAt(0).toUpperCase()+tab.slice(1)}Tab`).style.display = 'block';
+    }
+
+    // Login / Logout
     async function doLogin() {
         const username = document.getElementById('loginUsername').value.trim();
         const password = document.getElementById('loginPassword').value.trim();
-        const errorDiv = document.getElementById('loginError');
-        if (!username || !password) { errorDiv.textContent = '❌ الرجاء إدخال البيانات'; errorDiv.style.display = 'block'; return; }
-        
+        const errDiv = document.getElementById('loginError');
+        if (!username || !password) { errDiv.textContent = '❌ الرجاء إدخال البيانات'; errDiv.style.display = 'block'; return; }
         const teacher = await db.collection('teachers').where('username','==',username).where('password','==',password).get();
-        if (!teacher.empty) { 
-            currentUser = teacher.docs[0].data(); 
-            currentUserType = 'teacher';
-            saveUserToLocalStorage(currentUser, currentUserType);
-            showTeacherDashboard(); 
-            return; 
-        }
-        
+        if (!teacher.empty) { currentUser = teacher.docs[0].data(); currentUserType = 'teacher'; saveUserToLocalStorage(currentUser, currentUserType); showTeacherDashboard(); return; }
         const student = await db.collection('students').where('username','==',username).where('password','==',password).get();
-        if (!student.empty) { 
-            currentUser = student.docs[0].data(); 
-            currentUser.id = student.docs[0].id;
-            currentUserType = 'student';
-            saveUserToLocalStorage(currentUser, currentUserType);
-            showStudentDashboard(); 
-            return; 
-        }
-        
+        if (!student.empty) { currentUser = student.docs[0].data(); currentUser.id = student.docs[0].id; currentUserType = 'student'; saveUserToLocalStorage(currentUser, currentUserType); showStudentDashboard(); return; }
         const parent = await db.collection('parents').where('username','==',username).where('password','==',password).get();
-        if (!parent.empty) { 
-            currentUser = parent.docs[0].data(); 
-            currentUserType = 'parent';
-            saveUserToLocalStorage(currentUser, currentUserType);
-            showParentDashboard(); 
-            return; 
-        }
-        
-        errorDiv.textContent = '❌ اسم المستخدم أو كلمة المرور غير صحيحة';
-        errorDiv.style.display = 'block';
+        if (!parent.empty) { currentUser = parent.docs[0].data(); currentUserType = 'parent'; saveUserToLocalStorage(currentUser, currentUserType); showParentDashboard(); return; }
+        errDiv.textContent = '❌ اسم المستخدم أو كلمة المرور غير صحيحة'; errDiv.style.display = 'block';
     }
+
+    function showLandingPage() { document.getElementById('landingPage').style.display = 'block'; document.getElementById('platformContainer').style.display = 'none'; }
+    function showPlatform() { document.getElementById('landingPage').style.display = 'none'; document.getElementById('platformContainer').style.display = 'block'; }
 
     function showTeacherDashboard() {
         document.getElementById('loginSection').style.display = 'none';
         document.getElementById('teacherDashboard').style.display = 'block';
         loadStudentsList(); loadParentsList(); loadStudentSelectors(); loadCurrentSession();
+        showTeacherTab('students');
     }
 
     async function showStudentDashboard() {
         document.getElementById('loginSection').style.display = 'none';
         document.getElementById('studentDashboard').style.display = 'block';
         document.getElementById('studentNameDisplay').textContent = currentUser.name;
-        document.getElementById('studentNewLesson').innerHTML = `<div class="lesson-title">📘 الدرس الجديد</div><div class="lesson-content">${currentUser.lessons?.jadeed || 'لا يوجد'}</div>`;
-        document.getElementById('studentHomework').innerHTML = `<div class="lesson-title">📌 واجب الحصة</div><div class="lesson-content">${currentUser.lessons?.qareeb || 'لا يوجد'}</div>`;
-        document.getElementById('studentReview').innerHTML = `<div class="lesson-title">🔄 المراجعة</div><div class="lesson-content">${currentUser.lessons?.baeed || 'لا توجد'}</div>`;
+        document.getElementById('studentNewLesson').innerHTML = `<div>📘 ${currentUser.lessons?.jadeed || 'لا يوجد'}</div>`;
+        document.getElementById('studentHomework').innerHTML = `<div>📌 ${currentUser.lessons?.qareeb || 'لا يوجد'}</div>`;
+        document.getElementById('studentReview').innerHTML = `<div>🔄 ${currentUser.lessons?.baeed || 'لا توجد'}</div>`;
         const stars = currentUser.rating?.stars || 0;
-        document.getElementById('studentRating').innerHTML = `<div class="lesson-title">⭐ التقييم</div><div class="rating-stars">${'★'.repeat(stars)}${'☆'.repeat(5-stars)}</div><div class="comment">${currentUser.rating?.comment || ''}</div>`;
+        document.getElementById('studentRating').innerHTML = `<div class="rating-stars">${'★'.repeat(stars)}${'☆'.repeat(5 - stars)}</div><div>${currentUser.rating?.comment || ''}</div>`;
         await loadStudentSession();
         await checkSubscriptionWarning();
     }
@@ -703,94 +436,18 @@
         document.getElementById('parentDashboard').style.display = 'block';
         const container = document.getElementById('parentStudentsData');
         container.innerHTML = '';
-        for(let id of (currentUser.linkedStudents||[])){
+        for (let id of (currentUser.linkedStudents || [])) {
             const doc = await db.collection('students').doc(id).get();
-            if(doc.exists){
+            if (doc.exists) {
                 const s = doc.data();
-                container.innerHTML += `<div class="card"><h3>👨‍🎓 ${s.name}</h3><p>📚 ${s.grade}</p><div class="lesson-item"><div class="lesson-title">📘 الدرس الجديد</div><div class="lesson-content">${s.lessons?.jadeed||''}</div></div><div class="lesson-item"><div class="lesson-title">⭐ التقييم</div><div class="rating-stars">${'★'.repeat(s.rating?.stars||0)}${'☆'.repeat(5-(s.rating?.stars||0))}</div></div></div>`;
+                container.innerHTML += `<div class="card"><h3>👨‍🎓 ${s.name}</h3><p>📚 ${s.grade}</p><div class="lesson-item"><div>📘 الدرس الجديد: ${s.lessons?.jadeed || ''}</div></div><div class="lesson-item"><div>⭐ التقييم: ${'★'.repeat(s.rating?.stars || 0)}${'☆'.repeat(5 - (s.rating?.stars || 0))}</div></div></div>`;
             }
         }
     }
 
-    async function loadStudentsList() {
-        const snapshot = await db.collection('students').get();
-        const list = document.getElementById('studentsList');
-        list.innerHTML = '';
-        snapshot.forEach(d => {
-            const s = d.data();
-            list.innerHTML += `<div class="card"><h3>👨‍🎓 ${s.name}</h3><p><strong>اسم المستخدم:</strong> ${s.username}</p><p><strong>📚 الصف:</strong> ${s.grade}</p><p><strong>💰 الاشتراك:</strong> ${s.subscription?.amount||200} جنيه</p><button class="btn-login-page" onclick="deleteStudent('${d.id}')" style="background:#e74c3c;width:auto;margin-top:10px;">حذف</button></div>`;
-        });
-    }
-
-    async function loadParentsList() {
-        const snapshot = await db.collection('parents').get();
-        const list = document.getElementById('parentsList');
-        list.innerHTML = '';
-        for(const doc of snapshot.docs){
-            const p = doc.data();
-            let names = [];
-            for(let sid of (p.linkedStudents||[])){
-                const s = await db.collection('students').doc(sid).get();
-                if(s.exists) names.push(s.data().name);
-            }
-            list.innerHTML += `<div class="card"><h3>👨‍👦 ${p.name}</h3><p>اسم المستخدم: ${p.username}</p><p>الطلاب: ${names.join(', ')}</p><button onclick="deleteParent('${doc.id}')" style="background:#e74c3c;padding:8px 15px;border:none;border-radius:8px;color:white;cursor:pointer;">حذف</button></div>`;
-        }
-    }
-
-    async function loadStudentSelectors() {
-        const snapshot = await db.collection('students').get();
-        const ls = document.getElementById('lessonStudentSelect');
-        const rs = document.getElementById('ratingStudentSelect');
-        const ss = document.getElementById('sessionStudentSelect');
-        const ps = document.getElementById('parentLinkedStudents');
-        [ls,rs,ss,ps].forEach(s => s.innerHTML = '');
-        snapshot.forEach(d => {
-            const s = d.data();
-            const opt = `<option value="${d.id}">${s.name} - ${s.grade}</option>`;
-            ls.innerHTML += opt; rs.innerHTML += opt; ss.innerHTML += opt;
-            ps.innerHTML += `<option value="${d.id}">${s.name}</option>`;
-        });
-    }
-
-    async function addStudent() {
-        const name = document.getElementById('studentName').value;
-        const user = document.getElementById('studentUsername').value;
-        const pass = document.getElementById('studentPassword').value;
-        const grade = document.getElementById('studentGrade').value;
-        const due = document.getElementById('subscriptionDueDate').value;
-        const amt = document.getElementById('subscriptionAmount').value;
-        if(!name || !user || !pass){ alert('املأ الحقول'); return; }
-        await db.collection('students').add({ name, username: user, password: pass, type: 'student', grade, subscription: { dueDate: due || null, amount: amt || 200 }, lessons: { jadeed: '', qareeb: '', baeed: '' }, rating: { stars: 0, comment: '' } });
-        alert('تم الإضافة');
-        loadStudentsList(); loadStudentSelectors(); loadParentsList();
-    }
-
-    async function addParent() {
-        const name = document.getElementById('parentName').value;
-        const user = document.getElementById('parentUsername').value;
-        const pass = document.getElementById('parentPassword').value;
-        const selected = Array.from(document.getElementById('parentLinkedStudents').selectedOptions).map(o => o.value);
-        if(!name || !user || !pass){ alert('املأ الحقول'); return; }
-        await db.collection('parents').add({ name, username: user, password: pass, type: 'parent', linkedStudents: selected, phone: '' });
-        alert('تم الإضافة');
-        loadParentsList();
-    }
-
-    async function deleteStudent(id){ if(confirm('تأكيد الحذف؟')){ await db.collection('students').doc(id).delete(); loadStudentsList(); loadStudentSelectors(); loadParentsList(); } }
-    async function deleteParent(id){ if(confirm('تأكيد الحذف؟')){ await db.collection('parents').doc(id).delete(); loadParentsList(); } }
-    async function updateStudentLessons(){ const id = document.getElementById('lessonStudentSelect').value; if(!id){ alert('اختر طالب'); return; } await db.collection('students').doc(id).update({ 'lessons.jadeed': document.getElementById('newLesson').value, 'lessons.qareeb': document.getElementById('homeworkLesson').value, 'lessons.baeed': document.getElementById('reviewLesson').value }); alert('تم التحديث'); }
-    async function submitRating(){ const id = document.getElementById('ratingStudentSelect').value; if(!id){ alert('اختر طالب'); return; } await db.collection('students').doc(id).update({ 'rating.stars': parseInt(document.getElementById('starsRating').value), 'rating.comment': document.getElementById('ratingComment').value }); alert('تم إرسال التقييم'); }
-    function toggleSessionTargets(){ const t = document.getElementById('sessionTargetType').value; document.getElementById('groupSelectDiv').style.display = t === 'group' ? 'block' : 'none'; document.getElementById('studentSelectDiv').style.display = t === 'student' ? 'block' : 'none'; }
-    async function setSessionLink(){ const link = document.getElementById('sessionLink').value; const type = document.getElementById('sessionTargetType').value; let targets = [], group = null; if(type === 'all') targets = ['all']; else if(type === 'group'){ group = document.getElementById('sessionGroupSelect').value; targets = ['group:'+group]; }else{ const sid = document.getElementById('sessionStudentSelect').value; targets = [sid]; } if(!link){ alert('أدخل الرابط'); return; } await db.collection('sessions').doc('current').set({ link, targets, targetType: type, group, date: new Date().toISOString() }); alert('تم الحفظ'); loadCurrentSession(); }
-    async function loadCurrentSession(){ const doc = await db.collection('sessions').doc('current').get(); const div = document.getElementById('currentSessionDisplay'); if(doc.exists){ const s = doc.data(); div.innerHTML = `<h3>🔗 الرابط الحالي</h3><p><a href="${s.link}" target="_blank">${s.link}</a></p><p>🎯 ${s.targetType === 'all' ? 'جميع الطلاب' : s.targetType === 'group' ? `الصف: ${s.group}` : 'طالب محدد'}</p>`; }else{ div.innerHTML = '<h3>لا يوجد رابط حصة</h3>'; } }
-    async function loadStudentSession(){ const doc = await db.collection('sessions').doc('current').get(); const div = document.getElementById('studentSessionLink'); if(doc.exists){ const s = doc.data(); let show = false; if(s.targets.includes('all')) show = true; else if(s.targetType === 'group' && s.group === currentUser.grade) show = true; else if(s.targets.includes(currentUser.id)) show = true; if(show) div.innerHTML = `<div class="lesson-title">🎥 رابط الحصة</div><a href="${s.link}" target="_blank">اضغط للدخول</a>`; else div.innerHTML = '<div class="lesson-title">لا توجد حصة مخصصة لك</div>'; }else{ div.innerHTML = '<div class="lesson-title">لا يوجد رابط حصة</div>'; } }
-    async function checkSubscriptionWarning(){ const due = currentUser.subscription?.dueDate; const amount = currentUser.subscription?.amount; const div = document.getElementById('studentSubscription'); if(due){ const diff = Math.ceil((new Date(due) - new Date())/(1000*60*60*24)); if(diff <= 0) div.innerHTML = `<div class="warning"><div class="warning-text">⚠️ الاشتراك منتهي!</div><div>تاريخ الاستحقاق: ${due}</div><div>تواصل مع الأستاذ: +20 10 91307627</div></div>`; else if(diff <= 3) div.innerHTML = `<div class="warning"><div class="warning-text">⚠️ متبقي ${diff} أيام</div><div>تاريخ الاستحقاق: ${due}</div></div>`; else div.innerHTML = `<div class="lesson-title">💰 الاشتراك</div><div>تاريخ الاستحقاق: ${due}</div><div>القيمة: ${amount} جنيه</div>`; }else{ div.innerHTML = '<div class="lesson-title">💰 الاشتراك</div><div>لم يحدد موعد</div>'; } }
-    function showTeacherTab(tab){ const tabs = ['students','parents','lessons','ratings','session']; tabs.forEach(t => document.getElementById(`teacher${t.charAt(0).toUpperCase()+t.slice(1)}Tab`).style.display = 'none'); document.getElementById(`teacher${tab.charAt(0).toUpperCase()+tab.slice(1)}Tab`).style.display = 'block'; }
-    
     function logout() {
         clearUserFromLocalStorage();
-        currentUser = null;
-        currentUserType = null;
+        currentUser = null; currentUserType = null;
         document.getElementById('loginSection').style.display = 'block';
         document.getElementById('teacherDashboard').style.display = 'none';
         document.getElementById('studentDashboard').style.display = 'none';
@@ -800,9 +457,8 @@
         showLandingPage();
     }
 
-    // ========== CHECK EXISTING LOGIN ON PAGE LOAD ==========
-    window.onload = function() {
-        initDefaultData();
+    window.onload = async function() {
+        await initDefaultData();
         loadCourses();
         if (loadUserFromLocalStorage()) {
             showPlatform();
